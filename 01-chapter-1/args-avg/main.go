@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	var sum float64
+	var sum, count float64
 	args := os.Args
 	for i, arg := range args {
 		// args[0] is a program name arg
@@ -21,8 +21,9 @@ func main() {
 			continue
 		}
 		sum += num
+		count++
 	}
-	_, err := fmt.Fprintln(os.Stdout, sum)
+	_, err := fmt.Fprintln(os.Stdout, sum/count)
 	if err != nil {
 		log.Println(err)
 	}
